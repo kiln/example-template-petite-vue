@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/petite-vue"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>petite-vue template for Flourish</title>
+  </head>
+
+  <body class="h-screen">
+    <div
+      v-scope
+      :class="{
+        'bg-blue-200': state.theme === 'light',
+        'bg-gray-900 text-blue-100': state.theme === 'dark'
+      }"
+      class="h-full w-full text-center text-xl font-bold"
+    >
+      <h1 class="py-4">Showing circles: {{ state.numCircles }}</h1>
+
+      <svg class="h-full w-full">
+        <circle
+          v-for="index in state.numCircles"
+          :key="index"
+          :cx="Math.floor(10 + Math.random() * 85) + '%'"
+          :cy="Math.floor(10 + Math.random() * 75) + '%'"
+          :r="Math.floor(Math.random() * 100)"
+          :fill="`hsl(${Math.floor(Math.random() * 360)}, 100%, 50%)`"
+          :data-index="index"
+        />
+      </svg>
+    </div>
+  </body>
+</html>

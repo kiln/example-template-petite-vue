@@ -1,0 +1,7 @@
+{
+  "name": "example-template-petite-vue-circles",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "flourish run"
+  }
+}
