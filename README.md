@@ -1,4 +1,4 @@
-An example template using alpinejs.
+An example template using petite-vue.
 
 # Run
 
